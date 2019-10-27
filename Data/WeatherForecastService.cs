@@ -19,7 +19,7 @@ namespace TestBlazorApp.Data
                 Date = startDate.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
-            }).ToArray());
+            }).ToArray()); 
         }
     }
 }
