@@ -1,0 +1,19 @@
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<div @ref="messagesGrid"></div>
+
+
+@code {
+    private ElementReference messagesGrid;
+    private string Param = "param777";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeJQGrid", Param);
+        }
+    }
+
+}
